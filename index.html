@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ZippMat</title>
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+<link rel="stylesheet" href="./assets/styles/main.css" />
+</head>
+<body>
+<!-- Header -->
+<header class="bg-white shadow-sm fixed-tops">
+  <div class="container">
+    <nav class="navbar"> <a class="navbar-brand" href="#"> <img              src="./assets/images/logo.svg"              alt="ZippMat Logo"              class="logo"            /> </a>
+      <button            class="navbar-toggler collapsed"            type="button"            data-bs-toggle="collapse"            data-bs-target="#main-menu"          > <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="main-menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Eko Blend GGBS</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Tar Shakti</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Eko Bar GFRP</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Marketplace</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Download App</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Contact US</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Careers</a> </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<main> 
+  <!-- Hero Banner Section -->
+  <section class="hero-banner-section">
+    <div class="swiper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"> <img src="./assets/images/home-banner-1.png" class="slide-bg"   alt="Mountain Landscape"                />
+            <div class="slices-container"></div>
+            <div class="slide-content container">
+              <h2 class="slide-heading limit-width"> Sustainable and responsible supply chain management. </h2>
+            </div>
+          </div>
+          <div class="swiper-slide"> <img src="./assets/images/home-banner-2.png" class="slide-bg" alt="Ocean Waves"                />
+            <div class="slices-container"></div>
+            <div class="slide-content container">
+              <h2 class="slide-heading"> <span>Innovating to</span> <span>build better.</span> </h2>
+            </div>
+          </div>
+          <div class="swiper-slide"> <img src="./assets/images/home-banner-3.png" class="slide-bg" alt="Forest Landscape"
+                />
+            <div class="slices-container"></div>
+            <div class="slide-content container">
+              <h2 class="slide-heading"> <span>Faster deliveries.</span> <span>Smarter systems.</span> <span>Lower costs.</span> </h2>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Products -->
+  <section class="products-section">
+    <div class="product-column bg-ggbs"> <span
+            class="overlay"
+            style="background-color: var(--tint-ekoblend)"
+          ></span>
+      <div class="heading-wrapper">
+        <h2>Ekoblend<br />
+          GGBS</h2>
+      </div>
+    </div>
+    <div class="product-column bg-tarshakti"> <span
+            class="overlay"
+            style="background-color: var(--tint-tarshakti)"
+          ></span>
+      <div class="heading-wrapper">
+        <h2>Tarshakti</h2>
+      </div>
+    </div>
+    <div class="product-column bg-gfrp"> <span
+            class="overlay"
+            style="background-color: var(--tint-ekobar)"
+          ></span>
+      <div class="heading-wrapper">
+        <h2>Ekobar<br />
+          GFRP</h2>
+      </div>
+    </div>
+    <div class="product-column bg-market"> <span
+            class="overlay"
+            style="background-color: var(--tint-market)"
+          ></span>
+      <div class="heading-wrapper">
+        <h2>Market<br />
+          Place</h2>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cities Section -->
+  <section class="cities-section">
+    <div class="cities-carousel"> 
+      <!-- List items -->
+      <div class="carousel-items">
+        <div class="item"> <img src="./assets/images/cities-bg.png" />
+          <div class="content">
+            <div class="title h1">Mumbai</div>
+            <div class="description"> Lorem ipsum dolor sit amet consectetur... </div>
+          </div>
+        </div>
+        <div class="item"> <img src="./assets/images/cities-bg.png" />
+          <div class="content">
+            <div class="title h1">Chennai</div>
+            <div class="description"> Lorem ipsum dolor sit amet consectetur... Lorem ipsum dolor
+              sit amet consectetur... Lorem ipsum dolor sit amet
+              consectetur... Lorem ipsum dolor sit amet consectetur... </div>
+          </div>
+        </div>
+        <div class="item"> <img src="./assets/images/cities-bg.png" />
+          <div class="content">
+            <div class="title h1">Kolkata</div>
+            <div class="description"> Lorem ipsum dolor sit amet consectetur... </div>
+          </div>
+        </div>
+        <div class="item"> <img src="./assets/images/cities-bg.png" />
+          <div class="content">
+            <div class="title h1">Delhi</div>
+            <div class="description"> Lorem ipsum dolor sit amet consectetur... </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Thumbnails -->
+      <div class="carousel-thumbnails">
+        <div class="container carousel-thumbnails-inner">
+          <div class="item"> <img src="./assets/images/cities-bg.png" />
+            <div class="content">
+              <div class="title h3">Chennai</div>
+            </div>
+          </div>
+          <div class="item"> <img src="./assets/images/cities-bg.png" />
+            <div class="content">
+              <div class="title h3">Kolkata</div>
+            </div>
+          </div>
+          <div class="item"> <img src="./assets/images/cities-bg.png" />
+            <div class="content">
+              <div class="title h3">Delhi</div>
+            </div>
+          </div>
+          <div class="item"> <img src="./assets/images/cities-bg.png" />
+            <div class="content">
+              <div class="title h3">Mumbai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arrows -->
+      <div class="arrows">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+      
+      <!-- Time bar -->
+      <div class="time"></div>
+    </div>
+  </section>
+  
+  <!-- Reviews -->
+  <section class="reviews-section section-with-spacing">
+    <div class="container">
+      <div class="reviews-wrapper">
+        <h2 class="mb-4">Reviews</h2>
+        <div class="reviews-grid">
+          <div class="grid-sizer"></div>
+          <div class="review-tile active" data-cols="6" data-rows="5">
+            <h4 class="review-title">Chirag<br />
+              Mehta</h4>
+            <p class="review-content"> Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Ipsum Lorem Ipsum Ipsum<br />
+              Lorem Ipsum Ipsum </p>
+          </div>
+          <div
+                class="review-tile data-bottom-left"
+                data-cols="2"
+                data-rows="2"
+              >
+            <h4 class="review-title">Karina</h4>
+            <p class="review-content"> Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Ipsum Lorem Ipsum Ipsum<br />
+              Lorem Ipsum Ipsum </p>
+          </div>
+          <div
+                class="review-tile data-top-left"
+                data-cols="4"
+                data-rows="2"
+              >
+            <h4 class="review-title">Rohan</h4>
+            <p class="review-content"> Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Ipsum Lorem Ipsum Ipsum<br />
+              Lorem Ipsum Ipsum </p>
+          </div>
+          <div
+                class="review-tile data-top-left"
+                data-cols="3"
+                data-rows="1"
+              >
+            <h4 class="review-title">Chrisel</h4>
+            <p class="review-content"> Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Ipsum Lorem Ipsum Ipsum<br />
+              Lorem Ipsum Ipsum </p>
+          </div>
+          <div
+                class="review-tile data-center-center"
+                data-cols="3"
+                data-rows="3"
+              >
+            <h4 class="review-title">Mitesh<br />
+              Joshi</h4>
+            <p class="review-content"> Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Ipsum Lorem Ipsum Ipsum<br />
+              Lorem Ipsum Ipsum </p>
+          </div>
+          <div
+                class="review-tile data-bottom-left"
+                data-cols="3"
+                data-rows="2"
+              >
+            <h4 class="review-title">Joel</h4>
+            <p class="review-content"> Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Lorem Ipsum Lorem Ipsum<br />
+              Lorem Ipsum Ipsum Lorem Ipsum Ipsum<br />
+              Lorem Ipsum Ipsum </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer> 
+  <!-- Contact Form -->
+  <section class="section-with-spacing">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 d-flex flex-column justify-content-between"> <img
+                src="./assets/images/logo.svg"
+                alt="ZippMat Logo"
+                class="logo mb-3"
+                width="280"
+              />
+          <h2 class="text-blue"> Need a <br />
+            supply-chain partner?<br />
+            Contact Us. </h2>
+        </div>
+        <div class="col-md-8">
+          <form class="get-quote-form" method="post" action="#">
+            <div class="row">
+              <div class="col-12">
+                <div class="mb-4">
+                  <input
+       name="name"
+       id="name"
+       type="text"
+       class="form-control"
+       placeholder="Name"
+     />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mb-4">
+                  <input
+       name="email"
+       id="email"
+       type="email"
+       class="form-control"
+       placeholder="Email"
+     />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mb-4">
+                  <input
+       name="phone"
+       id="phone"
+       type="tel"
+       class="form-control"
+       placeholder="Phone"
+     />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mb-4">
+                  <textarea
+       name="message"
+       id="message"
+       class="form-control"
+       rows="3"
+       placeholder="Message"
+     ></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="form-button"> Get a quote </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer-inner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <h4>ISO 9001:2015 Certified Company</h4>
+        </div>
+        <div class="col-md-4">
+          <p>333, 1A Main Road, 8A Cross, RMV Extension,</p>
+          <p>Bangalore, India</p>
+          <br />
+          <p>Email: contact@zippmat.com</p>
+          <p>Phone: +91 63016 29449</p>
+        </div>
+        <div class="col-md-4">
+          <div class="navbar d-block"> <a href="#">Terms &amp; Conditions</a> <a href="#">Privacy Policy</a> <a href="#">Business T&amp;C for Customers</a> <a href="#">MSME Certificate</a> </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+<script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+<script src="./assets/scripts/masonary.js"></script> 
+<script src="./assets/scripts/main.js"></script>
+</body>
+</html>
