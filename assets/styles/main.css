@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #139c56;
-
+  --color-secondary:#1b4588;
   --tint-ekoblend: #139c55;
   --tint-tarshakti: #174689;
   --tint-ekobar: #139c55;
@@ -10,6 +10,9 @@
 
   --product-hover-transition-duration: 0.5s;
 }
+
+.navbar-toggler:focus {box-shadow:none !important;}
+.navbar-toggler:hover {}
 
 /* Typography */
 .ap-regular {
@@ -297,14 +300,17 @@ body:has(header.fixed-top) main {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
+    background: var(--color-primary);
+  /*background: rgba(0, 0, 0, 0.3);*/
   backdrop-filter: blur(5px);
   color: white;
   transition: all 0.3s ease;
 }
 .hero-banner-section .swiper-button-next:hover,
 .hero-banner-section .swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0.5);
+  /*background: rgba(0, 0, 0, 0.5);*/
+    
+    background: var(--color-secondary);
   transform: scale(1.1);
 }
 .hero-banner-section .swiper-button-next::after,
@@ -367,11 +373,12 @@ body:has(header.fixed-top) main {
 }
 
 .products-section .product-column:hover .overlay {
-  opacity: 0.3;
+  opacity: 0;
 }
 
 .products-section .product-column .heading-wrapper {
-  position: relative;
+  position: absolute;
+    top: 80px;
   z-index: 2;
   padding: 20px;
   text-align: left;
@@ -398,26 +405,25 @@ body:has(header.fixed-top) main {
 .products-section .product-column:hover h2 {
   font-size: 4rem;
   letter-spacing: -1px;
+    text-align: center
 }
 
 .bg-ggbs {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../images/ekoblend2.png");
+  background-image: url("../images/ekoblend2.png");
+    background-position: left top !important;
 }
 
 .bg-tarshakti {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../images/tarshakti2.png");
+  background-image:  url("../images/tarshakti2.png");
+    background-position: center top !important;
 }
 
 .bg-gfrp {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../images/ekobar2.png");
+  background-image: url("../images/ekobar2.png");
 }
 
 .bg-market {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../images/marketplace2.png");
+  background-image: url("../images/marketplace2.png");
 }
 
 /* Cities section */
@@ -572,7 +578,7 @@ body:has(header.fixed-top) main {
   .item:nth-child(1)
   .content
   .title {
-  animation-delay: 1.2s;
+  animation-delay: 0.2s;
 }
 
 .cities-section
@@ -581,7 +587,7 @@ body:has(header.fixed-top) main {
   .item:nth-child(1)
   .content
   .description {
-  animation-delay: 1.6s;
+  animation-delay: 0.6s;
 }
 
 /* Next click animation */
