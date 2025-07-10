@@ -179,11 +179,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const thumbnailItems = thumbnailBorderDom.querySelectorAll(".item");
         thumbnailItems.forEach((thumb) => {
           thumb.onclick = () => {
+            resetClasses();
             const currentThumbnails = Array.from(
               thumbnailBorderDom.querySelectorAll(".item")
             );
             const clickedIndex = currentThumbnails.indexOf(thumb);
-            moveToIndex(clickedIndex);
+            setTimeout(() => {
+              moveToIndex(clickedIndex)
+            }, 200);;
           };
         });
       }
@@ -215,30 +218,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Reviews section
   {
-    $(".reviews-grid").masonry({
-      columnWidth: $(".reviews-grid").width() / 12,
-      itemSelector: ".review-tile",
-      percentPosition: true,
+    document.querySelectorAll(".review-tile").forEach((tile) => {
+      const cols = tile.getAttribute("data-cols") || 1;
+      const rows = tile.getAttribute("data-rows") || 1;
+      tile.style.gridColumn = `span ${cols}`;
+      tile.style.gridRow = `span ${rows}`;
+
+      // On click, swap content with active tile
+      tile.addEventListener("click", () => {
+        if (window.innerWidth <= 992) {
+          // For mobile, just toggle active class
+          document
+            .querySelectorAll(".review-tile")
+            .forEach((t) => t.classList.remove("active"));
+          tile.classList.add("active");
+          return;
+        }
+
+        const activeTile = document.querySelector(".review-tile.active");
+
+        if (tile === activeTile) return; // no need to swap with itself
+
+        // Elements to swap
+        const activeTitle = activeTile.querySelector(".review-title");
+        const activeContent = activeTile.querySelector(".review-content");
+
+        const clickedTitle = tile.querySelector(".review-title");
+        const clickedContent = tile.querySelector(".review-content");
+
+        // Add transition classes
+        activeTile.classList.add("fade-out");
+        tile.classList.add("fade-out");
+
+        setTimeout(() => {
+          // Swap innerHTML
+          const tempTitle = activeTitle.innerHTML;
+          const tempContent = activeContent.innerHTML;
+
+          activeTitle.innerHTML = clickedTitle.innerHTML;
+          activeContent.innerHTML = clickedContent.innerHTML;
+
+          clickedTitle.innerHTML = tempTitle;
+          clickedContent.innerHTML = tempContent;
+
+          // Remove transition classes after animation
+          activeTile.classList.remove("fade-out");
+          tile.classList.remove("fade-out");
+        }, 300); // should match animation duration
+      });
     });
+  }
 
-    $(".reviews-grid").on("click", ".review-tile", function () {
-      const activeTile = $(".review-tile.active");
-      $(this).addClass("active");
-      $(".review-tile").not(this).removeClass("active");
+  // Counter animation
+  // This function counts up from 0 to the target number over a specified duration
+  {
+    function countUp(el, duration = 1500) {
+      const target = parseFloat(el.getAttribute("data-target"));
+      const isDecimal = target % 1 !== 0;
+      let start = 0;
+      const fps = 120;
+      const totalFrames = Math.round(duration / (1000 / fps));
+      let frame = 0;
 
-      // Replace the data-rows and data-cols attributes with active previous active tile
-      const activeRows = activeTile.attr("data-rows");
-      const activeCols = activeTile.attr("data-cols");
-      const currentRows = $(this).attr("data-rows");
-      const currentCols = $(this).attr("data-cols");
+      function update() {
+        frame++;
+        const progress = frame / totalFrames;
+        const current = target * progress;
 
-      activeTile.attr("data-rows", currentRows);
-      activeTile.attr("data-cols", currentCols);
-      $(this).attr("data-rows", activeRows);
-      $(this).attr("data-cols", activeCols);
+        el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
 
-      // Reinitialize Masonry layout
-      $(".reviews-grid").masonry("layout");
+        if (frame < totalFrames) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const counters = document.querySelectorAll(".counter");
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            countUp(entry.target);
+            obs.unobserve(entry.target); // run only once
+          }
+        });
+      },
+      {
+        threshold: 0.6, // adjust based on how much should be visible
+      }
+    );
+
+    counters.forEach((counter) => {
+      observer.observe(counter);
     });
   }
 });

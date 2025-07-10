@@ -1,495 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ZippMat</title>
-<link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZippMat</title>
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-<link
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-<link rel="stylesheet" href="./assets/styles/main.css" />
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<style>
-.au-bg {
-    background-image: url("./assets/images/au-banner.jpg");
-    background-size: cover;
-}
-.text-au {
-    font-size: 42px;
-    line-height: 33px;
-    letter-spacing: -1px;
-}
-.text-au2 {
-    font-size: 25px;
-    line-height: 40px;
-}
-.text-au3 {
-    font-size: 185px;
-    line-height: 152px;
-    letter-spacing: -10px;
-}
-.blue-headline {
-    color: #174689 !important;
-}
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .au-bg {
+        background-image: url("./assets/images/au-banner.jpg");
+        background-size: cover;
+      }
+      .text-au {
+        font-size: 42px;
+        line-height: 33px;
+        letter-spacing: -1px;
+      }
+      .text-au2 {
+        font-size: 25px;
+        line-height: 40px;
+      }
+      .text-au3 {
+        font-size: 185px;
+        line-height: 152px;
+        letter-spacing: -10px;
+      }
+      .blue-headline {
+        color: #174689 !important;
+      }
 
-@media (max-width: 767.98px) {
-.text-au {
-    font-size: 32px;
-    line-height: 23px;
-    letter-spacing: -1px;
-}
-.text-au2 {
-    font-size: 20px;
-    line-height: 30px;
-}
-.text-au3 {
-    font-size: 85px;
-    line-height: 72px;
-    letter-spacing: -5px;
-}
-}
-</style>
-<style>
-/* ---------- GENERAL ---------- */
-:root {
---brand-blue:#0d3f86;   /* deep blue background */
---brand-green:#089245;  /* leaf & semicircle */
---leaf-size:20px;
---transition:0.35s ease-in-out;
-}
-.container-90 {
-    max-width: 90%;
-}
-/* ---------- HERO WITH PHOTO OVERLAY ---------- */
-.hero {
-    background: url('./assets/images/hero-bg.jpg') center/cover;
-    position: relative;
-    isolation: isolate;
-    min-height: 240px;
-}
-.hero h1 {
-    font-family: "acumin-pro", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    line-height: 1.05;
-    margin: 0;
-}
-.hero p {
-    font-size: clamp(1rem, 1.1vw+0.5rem, 1.5rem);
-    margin: 0;
-    font-weight: 400;
-}
-.hero .overlay {
-    position: relative; /* keep text above ::after */
-    padding: 4rem 0;
-}
-.hero-headline h1 {
-    font-size: 85px;
-    line-height: 72px;
-}
-/* ---------- AU-HERO WITH PHOTO OVERLAY ---------- */
-.au-hero {
-    background: url('./assets/images/cp-bg2.png') center/cover;
-    position: relative;
-    isolation: isolate;
-    min-height: 240px;
-}
-.au-hero h1 {
-    font-family: "acumin-pro", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    line-height: .8;
-    margin: 0;
-    font-size: 96px;
-}
-.au-hero p {
-    font-size: clamp(1rem, 1.1vw+0.5rem, 1.5rem);
-    margin: 0;
-    font-weight: 400;
-}
-.au-hero .overlay {
-    position: relative; /* keep text above ::after */
-    padding: 4rem 0;
-}
-.au-hero-headline h1 {
-    font-size: 85px;
-    line-height: 72px;
-}
-.mh112 {
-    max-height: 112px;
-}
-.mh112 img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-}
-/* ---------- BENEFITS SECTION ---------- */
-.benefits {
-    background: var(--brand-blue);
-    padding: 4rem 0;
-}
-/* list styling */
-.benefit-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 550px;
-}
-.benefit-item {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: 2.2rem;
-    transition: color var(--transition);
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #139c55;
-}
-.benefit-item:last-child {
-    margin-bottom: 0;
-}
-.benefit-item .leaf {
-    width: var(--leaf-size);
-    height: var(--leaf-size);
-    margin-right: 1.1rem;
-    flex: 0 0 var(--leaf-size);
-    transition: background var(--transition);
-    /*clip-path:ellipse(70% 50% at 50% 50%);*/
-    border-radius: 0 10px 0 10px;
-    height: 10px;
-    width: 20px;
-}
-.benefit-item.active, .benefit-item:hover {
-    color: #fff;
-}
-.benefit-item.active .leaf, .benefit-item:hover .leaf {
-    background: #fff;
-}
-.benefit-item .leaf {
-    background: var(--brand-green);
-}
-/* ---------- RIGHT SEMICIRCLE ---------- */
-.semi-wrap {
-    position: relative;
-    min-height: 380px;
-}
-.semi-circle {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    translate: 0 -50%;
-    width: 100%;
-    max-width: 700px;
-    aspect-ratio: 2/1;                 /* keeps nice semicircle */
-    background-image: url("./assets/images/shape.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    /*border-radius:0 100% 100% 0/0 50% 50% 0;*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 3rem;
-    text-align: center;
-}
-.semi-circle p {
-    width: 50%;
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.55;
-    opacity: 0;
-    transition: opacity var(--transition);
-    position: absolute;
-}
-.semi-circle p.show {
-    opacity: 1;
-}
+      @media (max-width: 767.98px) {
+        .text-au {
+          font-size: 32px;
+          line-height: 23px;
+          letter-spacing: -1px;
+        }
+        .text-au2 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .text-au3 {
+          font-size: 85px;
+          line-height: 72px;
+          letter-spacing: -5px;
+        }
+      }
+    </style>
+    <style>
+      /* ---------- GENERAL ---------- */
+      :root {
+        --brand-blue: #0d3f86; /* deep blue background */
+        --brand-green: #089245; /* leaf & semicircle */
+        --leaf-size: 20px;
+        --transition: 0.35s ease-in-out;
+      }
+      .container-90 {
+        max-width: 90%;
+      }
+      /* ---------- HERO WITH PHOTO OVERLAY ---------- */
+      .hero {
+        background: url("./assets/images/hero-bg.jpg") center/cover;
+        position: relative;
+        isolation: isolate;
+        min-height: 240px;
+      }
+      .hero h1 {
+        font-family: "acumin-pro", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        line-height: 1.05;
+        margin: 0;
+      }
+      .hero p {
+        font-size: clamp(1rem, 1.1vw+0.5rem, 1.5rem);
+        margin: 0;
+        font-weight: 400;
+      }
+      .hero .overlay {
+        position: relative; /* keep text above ::after */
+        padding: 4rem 0;
+      }
+      .hero-headline h1 {
+        font-size: 85px;
+        line-height: 72px;
+      }
+      /* ---------- AU-HERO WITH PHOTO OVERLAY ---------- */
+      .au-hero {
+        background: url("./assets/images/cp-bg2.png") center/cover;
+        position: relative;
+        isolation: isolate;
+        min-height: 240px;
+      }
+      .au-hero h1 {
+        font-family: "acumin-pro", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        line-height: 0.8;
+        margin: 0;
+        font-size: 96px;
+      }
+      .au-hero p {
+        font-size: clamp(1rem, 1.1vw+0.5rem, 1.5rem);
+        margin: 0;
+        font-weight: 400;
+      }
+      .au-hero .overlay {
+        position: relative; /* keep text above ::after */
+        padding: 4rem 0;
+      }
+      .au-hero-headline h1 {
+        font-size: 85px;
+        line-height: 72px;
+      }
+      .mh112 {
+        max-height: 112px;
+      }
+      .mh112 img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+      }
+      /* ---------- BENEFITS SECTION ---------- */
+      .benefits {
+        background: var(--brand-blue);
+        padding: 4rem 0;
+      }
+      /* list styling */
+      .benefit-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-width: 550px;
+      }
+      .benefit-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 2.2rem;
+        transition: color var(--transition);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #139c55;
+      }
+      .benefit-item:last-child {
+        margin-bottom: 0;
+      }
+      .benefit-item .leaf {
+        width: var(--leaf-size);
+        height: var(--leaf-size);
+        margin-right: 1.1rem;
+        flex: 0 0 var(--leaf-size);
+        transition: background var(--transition);
+        /*clip-path:ellipse(70% 50% at 50% 50%);*/
+        border-radius: 0 10px 0 10px;
+        height: 10px;
+        width: 20px;
+      }
+      .benefit-item.active,
+      .benefit-item:hover {
+        color: #fff;
+      }
+      .benefit-item.active .leaf,
+      .benefit-item:hover .leaf {
+        background: #fff;
+      }
+      .benefit-item .leaf {
+        background: var(--brand-green);
+      }
+      /* ---------- RIGHT SEMICIRCLE ---------- */
+      .semi-wrap {
+        position: relative;
+        min-height: 380px;
+      }
+      .semi-circle {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        translate: 0 -50%;
+        width: 100%;
+        max-width: 700px;
+        aspect-ratio: 2/1; /* keeps nice semicircle */
+        background-image: url("./assets/images/shape.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        /*border-radius:0 100% 100% 0/0 50% 50% 0;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 3rem;
+        text-align: center;
+      }
+      .semi-circle p {
+        width: 50%;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.55;
+        opacity: 0;
+        transition: opacity var(--transition);
+        position: absolute;
+      }
+      .semi-circle p.show {
+        opacity: 1;
+      }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:991.98px) {
-.hero-headline h1 {
-    font-size: 45px;
-    line-height: 40px;
-}
-.semi-wrap {
-    margin-top: 1rem;
-    min-height: 200px;
-}
-.semi-circle {
-    width: 100%;
-    max-width: none;
-}
-.semi-circle p {
-    width: 75%;
-    font-size: .85rem;
-    line-height: 1.2;
-    line-height: 1.2;
-}
-.benefit-item {
-    margin-bottom: .5rem;
-}
-}
-</style>
-</head>
-<body>
-
-<!-- Header -->
-<header class="bg-white shadow-sm fixed-tops">
-  <div class="container">
-    <nav class="navbar"> <a class="navbar-brand" href="index.html"> <img src="./assets/images/logo.svg" alt="ZippMat Logo" class="logo" /> </a>
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="main-menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"> <a class="nav-link" href="about-us.html">About Us</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="eko-blend-ggbs.html">Eko Blend GGBS</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="tar-shakti.html">Tar Shakti</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="eko-bar-gfrp.html">Eko Bar GFRP</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="marketplace.html">Marketplace</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="download-app.html">Download App</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="contact-us.html">Contact Us</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="careers.html">Careers</a> </li>
-        </ul>
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 991.98px) {
+        .hero-headline h1 {
+          font-size: 45px;
+          line-height: 40px;
+        }
+        .semi-wrap {
+          margin-top: 1rem;
+          min-height: 200px;
+        }
+        .semi-circle {
+          width: 100%;
+          max-width: none;
+        }
+        .semi-circle p {
+          width: 75%;
+          font-size: 0.85rem;
+          line-height: 1.2;
+          line-height: 1.2;
+        }
+        .benefit-item {
+          margin-bottom: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed-tops">
+      <div class="container">
+        <nav class="navbar">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./assets/images/logo.svg"
+              alt="ZippMat Logo"
+              class="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="eko-blend-ggbs.html"
+                  >Eko Blend GGBS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tar-shakti.html">Tar Shakti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="eko-bar-gfrp.html">Eko Bar GFRP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="marketplace.html">Marketplace</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="download-app.html">Download App</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact-us.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="careers.html">Careers</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-</header>
+    </header>
 
-<!-- Banner -->
-<section class="bg-primary text-white min-vh-100 d-flex align-items-center justify-content-center au-bg">
-  <div class="container container-90">
-    <h1 class="breadcrumb-custom ap-medium">HOME  /  ABOUT US</h1>
-    <div class="row mt-lg-55" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="500">
-      <div class="col-12 col-lg-6">
-        <h1 class="display-4 ap-black green-headline-cp text-uppercase">The<br>
-          ZippMat®<br>
-          Style</h1>
-      </div>
-      <div class="col-12 col-lg-6">
-        <h1 class="display-4 ap-black blue-headline green-headline-cp mt-lg-50 text-au3" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="500">OUR<br>
-          STORY</h1>
-        <p class="lead ap-black blue-headline text-au mt-lg-25" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="1000">ESTD : 2021</p>
-        <p class="lead ap-medium text-au2 mt-lg-55" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="1500">Our Vision is to digitize and demystify Bharat’s supply-chains.<br>
-          <br>
-          Our Mission is to provide the best quality material, at the fastest possible time, at the most competitive price.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ───────────────── HERO SECTION ────────────────── -->
-<section class="hero min-vh-40 py-5">
-  <div class="container container-90 overlay">
-    <div class="col-lg-10 text-white hero-headline ap-black" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="500">
-      <h1>WHEN<br>
-        CHOOSING US</h1>
-      <p class="mt-2">as your supply chain partner, you can benefit from:</p>
-    </div>
-  </div>
-</section>
-
-<!-- ──────────────── BENEFITS LIST + SEMI CIRCLE ──────────────── -->
-<section class="benefits" id="benefits">
-  <div class="container container-90 py-2">
-    <div class="row align-items-center"> 
-      <!-- LEFT: BULLETS -->
-      <div class="col-lg-6" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="500">
-        <ul class="benefit-list">
-          <li class="benefit-item active" data-target="b1"> <span class="leaf"></span>One‑stop‑shop experience </li>
-          <li class="benefit-item" data-target="b2"> <span class="leaf"></span>Pan‑India Network </li>
-          <li class="benefit-item" data-target="b3"> <span class="leaf"></span>Improved margins and reduced timelines </li>
-          <li class="benefit-item" data-target="b4"> <span class="leaf"></span>Comprehensive supply chain management </li>
-          <li class="benefit-item" data-target="b5"> <span class="leaf"></span>Transparent and collaborative approach </li>
-          <li class="benefit-item" data-target="b6"> <span class="leaf"></span>Exceptional customer service </li>
-        </ul>
-      </div>
-      
-      <!-- RIGHT: SEMICIRCLE -->
-      <div class="col-lg-6" data-aos="fade-left" data-aos-easing="ease-in" data-aos-duration="500" data-aos-delay="500">
-        <div class="semi-wrap">
-          <div class="semi-circle text-white"> 
-            <!-- These <p> blocks hold each variant of copy -->
-            <p id="b1" class="show">Our extensive supply network and technology‑driven services provide seamless solutions for procurement, transportation, warehousing, and logistics.</p>
-            <p id="b2">Benefit from our nationwide reach that ensures efficient delivery and sourcing across India, no matter where you operate.</p>
-            <p id="b3">By optimising every step, we lower procurement costs and shorten supply timelines, ultimately improving your bottom line.</p>
-            <p id="b4">We oversee every link—from sourcing to last‑mile delivery—so you can focus on your core business.</p>
-            <p id="b5">Our transparent processes and real‑time tracking foster a collaborative partnership built on trust.</p>
-            <p id="b6">Dedicated account managers and 24/7 support guarantee a customer experience that exceeds expectations.</p>
+    <!-- Banner -->
+    <section
+      class="bg-primary text-white min-vh-100 d-flex align-items-center justify-content-center au-bg"
+    >
+      <div class="container container-90">
+        <h1 class="breadcrumb-custom ap-medium">HOME / ABOUT US</h1>
+        <div
+          class="row mt-lg-55"
+          data-aos="fade-right"
+          data-aos-easing="ease-out"
+          data-aos-duration="500"
+        >
+          <div class="col-12 col-lg-6">
+            <h1 class="display-4 ap-black green-headline-cp text-uppercase">
+              The<br />
+              ZippMat®<br />
+              Style
+            </h1>
+          </div>
+          <div class="col-12 col-lg-6">
+            <h1
+              class="display-4 ap-black blue-headline green-headline-cp mt-lg-50 text-au3"
+              data-aos="fade-left"
+              data-aos-easing="ease-out"
+              data-aos-duration="500"
+              data-aos-delay="500"
+            >
+              OUR<br />
+              STORY
+            </h1>
+            <p
+              class="lead ap-black blue-headline text-au mt-lg-25"
+              data-aos="fade-left"
+              data-aos-easing="ease-out"
+              data-aos-duration="500"
+              data-aos-delay="1000"
+            >
+              ESTD : 2021
+            </p>
+            <p
+              class="lead ap-medium text-au2 mt-lg-55"
+              data-aos="fade-left"
+              data-aos-easing="ease-out"
+              data-aos-duration="500"
+              data-aos-delay="1500"
+            >
+              Our Vision is to digitize and demystify Bharat’s supply-chains.<br />
+              <br />
+              Our Mission is to provide the best quality material, at the
+              fastest possible time, at the most competitive price.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- OUR TEAM SECTION -->
-<section class="our-team-section py-5" style="background-color: #f9f9f9;">
-  <div class="container container-90">
-    <div class="row align-items-center g-4"> 
-      <!-- LEFT: Profile Image + Text -->
-      <div class="col-lg-4 text-center text-lg-start position-relative">
-        <div class="position-relative" style="width: 100%; max-width: 320px; margin: 0 auto;"> <img src="images/ceo.png" alt="Abhijeet Kudva" class="img-fluid" style="clip-path: ellipse(90% 60% at 30% 50%); " /> </div>
-        <div class="mt-3">
-          <h5 class="fw-bold text-primary mb-0" style="font-size: 1.1rem;">Abhijeet Kudva</h5>
-          <p class="mb-0 text-success">Co‑Founder and CEO</p>
+    <!-- ───────────────── HERO SECTION ────────────────── -->
+    <section class="hero min-vh-40 py-5">
+      <div class="container container-90 overlay">
+        <div
+          class="col-lg-10 text-white hero-headline ap-black"
+          data-aos="fade-up"
+          data-aos-easing="ease-out"
+          data-aos-duration="500"
+        >
+          <h1>
+            WHEN<br />
+            CHOOSING US
+          </h1>
+          <p class="mt-2">
+            as your supply chain partner, you can benefit from:
+          </p>
         </div>
       </div>
-      
-      <!-- CENTER: OUR TEAM Leaf -->
-      <div class="col-lg-8">
-        <div class="position-relative" style="width: 100%; max-width: 700px; margin: 0 auto;">
-          <div class="leaf-title text-center text-white" style="
-            background: #0d3f86;
-            border-radius: 100% 0 0 100% / 50% 0 0 50%;
-            padding: 3rem 2rem;
-            color: #089245;
-            font-size: 3rem;
-            font-weight: 700;
-            font-family: 'Barlow Condensed', sans-serif;
-            width: 100%;
-            max-width: 100%;
-            display: inline-block;
-          "> OUR<br>
-            TEAM </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- TEAM MEMBERS -->
-    <div class="row text-center mt-5 g-4"> 
-      <!-- Each team member -->
-      <div class="col-6 col-md-4 col-lg-2 offset-lg-1">
-        <div class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; background-color: #089245;"></div>
-        <p class="fw-bold mb-0 text-primary">Nandeesh Hasbi</p>
-        <p class="text-success small">Co‑Founder and CBO</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; background-color: #089245;"></div>
-        <p class="fw-bold mb-0 text-primary">Akhilesh Jain</p>
-        <p class="text-success small">Finance Controller</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; background-color: #089245;"></div>
-        <p class="fw-bold mb-0 text-primary">Bhaskar Bardhan</p>
-        <p class="text-success small">Director of Sales</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; background-color: #089245;"></div>
-        <p class="fw-bold mb-0 text-primary">Shubhang Lalla</p>
-        <p class="text-success small">Director of Sourcing</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; background-color: #089245;"></div>
-        <p class="fw-bold mb-0 text-primary">Vishal Uchil</p>
-        <p class="text-success small">Director of Engineering</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer> 
-  <!-- Contact Form -->
-  <section class="section-with-spacing">
-    <div class="container container-90 overlay">
-      <div class="col-lg-10 green-headline hero-headline ap-black" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="500">
-        <h1>OUR<br>
-          INVESTORS</h1>
-      </div>
-      <div class="row align-middle py-5" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="500">
-        <div class="col-md-4 p-3 mh112"><img src="./assets/images/zephyr.png" alt="ZEPHYR PEACOCK INDIA" class="img-fluid" style=" " /></div>
-        <div class="col-md-4 p-3 mh112 "><img src="./assets/images/hdfc.png" alt="HDFC BANK" class="img-fluid" style=" " /></div>
-        <div class="col-md-4 p-3 mh112"><img src="./assets/images/z47.png" alt="Z47" class="img-fluid" style=" " /></div>
-      </div>
-    </div>
-  </section>
-  <section class="footer-inner">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <h4>ISO 9001:2015 Certified Company</h4>
-        </div>
-        <div class="col-md-4">
-          <p>333, 1A Main Road, 8A Cross, RMV Extension,</p>
-          <p>Bangalore, India</p>
-          <br />
-          <p>Email: contact@zippmat.com</p>
-          <p>Phone: +91 63016 29449</p>
-        </div>
-        <div class="col-md-4">
-          <div class="navbar d-block"> <a href="terms-and-conditions.html">Terms &amp; Conditions</a> <a href="privacy-policy.html">Privacy Policy</a> <a href="customer-terms.html">Business T&amp;C for Customers</a> <a href="msme.pdf">MSME Certificate</a> </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</footer>
-<!-- ──────────────── JS: BULLET HOVER → TEXT SWAP ──────────────── --> 
-<script>
-    const items = document.querySelectorAll('.benefit-item');
-    const texts = document.querySelectorAll('.semi-circle p');
+    <!-- ──────────────── BENEFITS LIST + SEMI CIRCLE ──────────────── -->
+    <section class="benefits" id="benefits">
+      <div class="container container-90 py-2">
+        <div class="row align-items-center">
+          <!-- LEFT: BULLETS -->
+          <div
+            class="col-lg-6"
+            data-aos="fade-right"
+            data-aos-easing="ease-out"
+            data-aos-duration="500"
+          >
+            <ul class="benefit-list">
+              <li class="benefit-item active" data-target="b1">
+                <span class="leaf"></span>One‑stop‑shop experience
+              </li>
+              <li class="benefit-item" data-target="b2">
+                <span class="leaf"></span>Pan‑India Network
+              </li>
+              <li class="benefit-item" data-target="b3">
+                <span class="leaf"></span>Improved margins and reduced timelines
+              </li>
+              <li class="benefit-item" data-target="b4">
+                <span class="leaf"></span>Comprehensive supply chain management
+              </li>
+              <li class="benefit-item" data-target="b5">
+                <span class="leaf"></span>Transparent and collaborative approach
+              </li>
+              <li class="benefit-item" data-target="b6">
+                <span class="leaf"></span>Exceptional customer service
+              </li>
+            </ul>
+          </div>
 
-    items.forEach(item=>{
-      item.addEventListener('mouseenter',()=>{
-        // 1) highlight bullet
-        items.forEach(i=>i.classList.remove('active'));
-        item.classList.add('active');
+          <!-- RIGHT: SEMICIRCLE -->
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+            data-aos-easing="ease-in"
+            data-aos-duration="500"
+            data-aos-delay="500"
+          >
+            <div class="semi-wrap">
+              <div class="semi-circle text-white">
+                <!-- These <p> blocks hold each variant of copy -->
+                <p id="b1" class="show">
+                  Our extensive supply network and technology‑driven services
+                  provide seamless solutions for procurement, transportation,
+                  warehousing, and logistics.
+                </p>
+                <p id="b2">
+                  Benefit from our nationwide reach that ensures efficient
+                  delivery and sourcing across India, no matter where you
+                  operate.
+                </p>
+                <p id="b3">
+                  By optimising every step, we lower procurement costs and
+                  shorten supply timelines, ultimately improving your bottom
+                  line.
+                </p>
+                <p id="b4">
+                  We oversee every link—from sourcing to last‑mile delivery—so
+                  you can focus on your core business.
+                </p>
+                <p id="b5">
+                  Our transparent processes and real‑time tracking foster a
+                  collaborative partnership built on trust.
+                </p>
+                <p id="b6">
+                  Dedicated account managers and 24/7 support guarantee a
+                  customer experience that exceeds expectations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // 2) fade out current & fade in new
-        const targetId = item.getAttribute('data-target');
-        texts.forEach(t=>{
-          if(t.id === targetId){
-            t.classList.add('show');
-          }else{
-            t.classList.remove('show');
-          }
+    <!-- OUR TEAM SECTION -->
+    <section class="our-team-section py-5" style="background-color: #f9f9f9">
+      <div class="container container-90">
+        <div class="row align-items-center g-4">
+          <!-- LEFT: Profile Image + Text -->
+          <div class="col-md-3 text-lg-start position-relative">
+            <div
+              class="position-relative"
+              style="width: 100%; max-width: 320px; margin: 0 auto"
+            >
+              <img
+                src="assets/images/ceo.jpg"
+                alt="Abhijeet Kudva"
+                class="img-fluid"
+                style="clip-path: ellipse(90% 60% at 30% 50%)"
+              />
+            </div>
+            <div class="mt-3">
+              <h5 class="fw-bold text-primary mb-0" style="font-size: 1.1rem">
+                Abhijeet Kudva
+              </h5>
+              <p class="mb-0 text-success">Co‑Founder and CEO</p>
+            </div>
+          </div>
+
+          <!-- CENTER: OUR TEAM Leaf -->
+          <div class="col-md-9">
+            <!-- TEAM MEMBERS -->
+            <div class="row mt-5 g-4">
+              <!-- Each team member -->
+              <div class="col-6 col-md-8 col-lg-8">
+                <div class="position-relative">
+                  <h2 class="h1 text-blue text-uppercase">
+                    OUR<br />
+                    TEAM
+                  </h2>
+                </div>
+              </div>
+              <div class="text-center col-6 col-md-4 col-lg-3 offset-lg-1">
+                <div
+                  class="rounded-circle mx-auto mb-3"
+                  style="width: 100px; height: 100px; background-color: #089245"
+                ></div>
+                <p class="fw-bold mb-0 text-primary">Vishal Uchil</p>
+                <p class="text-success small">Director of Engineering</p>
+              </div>
+              <div class="text-center col-6 col-md-4 col-lg-3">
+                <div
+                  class="rounded-circle mx-auto mb-3"
+                  style="width: 100px; height: 100px; background-color: #089245"
+                ></div>
+                <p class="fw-bold mb-0 text-primary">Nandeesh Hasbi</p>
+                <p class="text-success small">Co‑Founder and CBO</p>
+              </div>
+              <div class="text-center col-6 col-md-4 col-lg-3">
+                <div
+                  class="rounded-circle mx-auto mb-3"
+                  style="width: 100px; height: 100px; background-color: #089245"
+                ></div>
+                <p class="fw-bold mb-0 text-primary">Akhilesh Jain</p>
+                <p class="text-success small">Finance Controller</p>
+              </div>
+              <div class="text-center col-6 col-md-4 col-lg-3">
+                <div
+                  class="rounded-circle mx-auto mb-3"
+                  style="width: 100px; height: 100px; background-color: #089245"
+                ></div>
+                <p class="fw-bold mb-0 text-primary">Bhaskar Bardhan</p>
+                <p class="text-success small">Director of Sales</p>
+              </div>
+              <div class="text-center col-6 col-md-4 col-lg-3">
+                <div
+                  class="rounded-circle mx-auto mb-3"
+                  style="width: 100px; height: 100px; background-color: #089245"
+                ></div>
+                <p class="fw-bold mb-0 text-primary">Shubhang Lalla</p>
+                <p class="text-success small">Director of Sourcing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <!-- Contact Form -->
+      <section class="section-with-spacing">
+        <div class="container container-90 overlay">
+          <div
+            class="col-lg-10 green-headline hero-headline ap-black"
+            data-aos="fade-up"
+            data-aos-easing="ease-out"
+            data-aos-duration="500"
+          >
+            <h1>
+              OUR<br />
+              INVESTORS
+            </h1>
+          </div>
+          <div
+            class="row align-middle py-5"
+            data-aos="fade-up"
+            data-aos-easing="ease-out"
+            data-aos-duration="500"
+            data-aos-delay="500"
+          >
+            <div class="col-md-4 p-3 mh112">
+              <img
+                src="./assets/images/zephyr.png"
+                alt="ZEPHYR PEACOCK INDIA"
+                class="img-fluid"
+                style=""
+              />
+            </div>
+            <div class="col-md-4 p-3 mh112">
+              <img
+                src="./assets/images/hdfc.png"
+                alt="HDFC BANK"
+                class="img-fluid"
+                style=""
+              />
+            </div>
+            <div class="col-md-4 p-3 mh112">
+              <img
+                src="./assets/images/z47.png"
+                alt="Z47"
+                class="img-fluid"
+                style=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer-inner">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <h4>ISO 9001:2015 Certified Company</h4>
+            </div>
+            <div class="col-md-4">
+              <p>333, 1A Main Road, 8A Cross, RMV Extension,</p>
+              <p>Bangalore, India</p>
+              <br />
+              <p>Email: contact@zippmat.com</p>
+              <p>Phone: +91 63016 29449</p>
+            </div>
+            <div class="col-md-4">
+              <div class="navbar d-block">
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="customer-terms.html">Business T&amp;C for Customers</a>
+                <a href="msme.pdf">MSME Certificate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <!-- ──────────────── JS: BULLET HOVER → TEXT SWAP ──────────────── -->
+    <script>
+      const items = document.querySelectorAll(".benefit-item");
+      const texts = document.querySelectorAll(".semi-circle p");
+
+      items.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          // 1) highlight bullet
+          items.forEach((i) => i.classList.remove("active"));
+          item.classList.add("active");
+
+          // 2) fade out current & fade in new
+          const targetId = item.getAttribute("data-target");
+          texts.forEach((t) => {
+            if (t.id === targetId) {
+              t.classList.add("show");
+            } else {
+              t.classList.remove("show");
+            }
+          });
         });
       });
-    });
-  </script> 
-<script>
-  window.addEventListener("load", function () {
-    document.getElementById("hero-headline").classList.add("animate");
-  });
-</script> 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Grab every element you marked for lazy reveal
-  const lazySections = document.querySelectorAll(".lazy-section");
-
-  // 2. Set up the observer
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("revealed"); // flip the switch
-          obs.unobserve(entry.target);            // stop observing once revealed
-        }
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("hero-headline").classList.add("animate");
       });
-    },
-    {
-      root: null,                   // viewport
-      threshold: 0,                 // trigger as soon as it enters
-      rootMargin: "0px 0px -100px"  // preload ~100 px before it shows
-    }
-  );
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Grab every element you marked for lazy reveal
+        const lazySections = document.querySelectorAll(".lazy-section");
 
-  // 3. Start observing
-  lazySections.forEach(sec => observer.observe(sec));
-});
-</script> 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
-<script>
-  AOS.init();
-</script> 
-<script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
-<script src="./assets/scripts/main.js"></script>
-</body>
+        // 2. Set up the observer
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed"); // flip the switch
+                obs.unobserve(entry.target); // stop observing once revealed
+              }
+            });
+          },
+          {
+            root: null, // viewport
+            threshold: 0, // trigger as soon as it enters
+            rootMargin: "0px 0px -100px", // preload ~100 px before it shows
+          }
+        );
+
+        // 3. Start observing
+        lazySections.forEach((sec) => observer.observe(sec));
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+  </body>
 </html>
