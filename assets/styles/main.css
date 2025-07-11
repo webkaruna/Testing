@@ -16,7 +16,7 @@
 }
 .navbar-toggler:hover {
 }
-.font25rem { font-size: 2.5rem;}
+
 /* Typography */
 .ap-regular {
   font-family: "acumin-pro", sans-serif;
@@ -153,10 +153,9 @@ h4,
 
 /* Header */
 header .navbar-brand img:hover {
-    width: 101%;
-    height: auto;
+  width: 101%;
+  height: auto;
 }
-
 
 header {
   padding-top: 12px;
@@ -185,8 +184,8 @@ header .navbar-toggler .navbar-toggler-icon {
   height: 2.5rem;
 }
 header .navbar-toggler .navbar-toggler-icon:hover {
-background-size: 110%;
-background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2030%2030'%3E%3Cpath%20stroke%3D'%23139c55'%20stroke-linecap%3D'round'%20stroke-miterlimit%3D'10'%20stroke-width%3D'2'%20d%3D'M4%207h22M4%2015h22M4%2023h22'%2F%3E%3C%2Fsvg%3E");
+  background-size: 110%;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2030%2030'%3E%3Cpath%20stroke%3D'%23139c55'%20stroke-linecap%3D'round'%20stroke-miterlimit%3D'10'%20stroke-width%3D'2'%20d%3D'M4%207h22M4%2015h22M4%2023h22'%2F%3E%3C%2Fsvg%3E");
 }
 
 header .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
@@ -224,7 +223,7 @@ header .navbar-collapse ul li a {
   padding: 20px 60px;
   text-decoration: none;
   text-transform: uppercase;
-    border: 1px solid #ffffff;
+  border: 1px solid #ffffff;
 }
 header .navbar-collapse ul li a:hover {
   background-color: #ffffff;
@@ -804,7 +803,7 @@ body:has(header.fixed-top) main {
 }
 
 /* ==============================Get a Quote Form============================= */
-Form */ .get-quote-form .form-control {
+.get-quote-form .form-control {
   padding: 8px 16px;
   font-size: 1.2rem;
   resize: none;
@@ -822,6 +821,27 @@ Form */ .get-quote-form .form-control {
   text-transform: uppercase;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+.get-quote-form .response-message {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  display: none;
+}
+.get-quote-form .response-message.info {
+  background: #17a2b8;
+  display: block;
+}
+.get-quote-form .response-message.success {
+  background: #28a745;
+  display: block;
+}
+.get-quote-form .response-message.error {
+  background: #dc3545;
+  display: block;
+}
 
 /* ==============================Reviews Section============================= */
 .reviews-section {
@@ -837,7 +857,7 @@ Form */ .get-quote-form .form-control {
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 96px;
+  grid-auto-rows: 120px;
   gap: 20px;
 }
 .review-tile {
@@ -987,9 +1007,41 @@ Form */ .get-quote-form .form-control {
   height: auto;
 }
 
+/* About page */
+.our-team-section {
+  background-color: #f9f9f9
+}
+.our-team-section .heading-wrapper {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 0 300px;
+  height: 100%;
+  align-items: center;
+}
+.our-team-section .heading-wrapper h2 {
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.our-team-section .team-member-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  background-color: var(--color-primary);
+}
+.our-team-section .ceo-image-wrapper {
+  flex: 1;
+}
+
 /* =============================Media Queries============================= */
 @media (max-width: 992px) {
-  .container {
+  .container-90 {
     max-width: 90%;
   }
   .text-lg {
@@ -1123,9 +1175,19 @@ Form */ .get-quote-form .form-control {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .gbbs-ekoblend-manufacturing-banner .arc-horizontal::after, .gbbs-ekoblend-banner.arc-right-top::after {
+  .gbbs-ekoblend-manufacturing-banner .arc-horizontal::after,
+  .gbbs-ekoblend-banner.arc-right-top::after {
     border-radius: 0;
     width: 100%;
+  }
+
+  .our-team-section .heading-wrapper {
+    padding: 8px 0;
+    border-radius: 0 300px;
+    margin: 32px 0;
+  }
+  .our-team-section .heading-wrapper h2 {
+    font-size: 3rem;
   }
 }
 

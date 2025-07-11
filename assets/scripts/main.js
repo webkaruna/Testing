@@ -185,8 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
             );
             const clickedIndex = currentThumbnails.indexOf(thumb);
             setTimeout(() => {
-              moveToIndex(clickedIndex)
-            }, 200);;
+              moveToIndex(clickedIndex);
+            }, 200);
           };
         });
       }
@@ -318,42 +318,103 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// filter animation
 
+const filterButtons = document.querySelectorAll(".filter-btn");
+const items = document.querySelectorAll(".item");
 
-  // filter animation
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelector(".filter-btn.active")?.classList.remove("active");
+    button.classList.add("active");
 
-   const filterButtons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.item');
+    const filter = button.getAttribute("data-filter");
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelector('.filter-btn.active')?.classList.remove('active');
-      button.classList.add('active');
-
-      const filter = button.getAttribute('data-filter');
-
-      // Hide all items instantly
-      items.forEach(item => {
-        item.classList.remove('show');
-        item.style.display = 'none';
-      });
-
-      // Then show only matching items with zoom-in
-      setTimeout(() => {
-        items.forEach(item => {
-          if (filter === 'all' || item.classList.contains(filter)) {
-            item.style.display = 'block';
-            setTimeout(() => item.classList.add('show'), 10); // trigger animation
-          }
-        });
-      }, 100); // small delay to allow reset
+    // Hide all items instantly
+    items.forEach((item) => {
+      item.classList.remove("show");
+      item.style.display = "none";
     });
+
+    // Then show only matching items with zoom-in
+    setTimeout(() => {
+      items.forEach((item) => {
+        if (filter === "all" || item.classList.contains(filter)) {
+          item.style.display = "block";
+          setTimeout(() => item.classList.add("show"), 10); // trigger animation
+        }
+      });
+    }, 100); // small delay to allow reset
+  });
+});
+
+// Show all items on page load
+window.onload = () => {
+  items.forEach((item) => {
+    item.style.display = "block";
+    setTimeout(() => item.classList.add("show"), 10);
   });
 
-  // Show all items on page load
-  window.onload = () => {
-    items.forEach(item => {
-      item.style.display = 'block';
-      setTimeout(() => item.classList.add('show'), 10);
-    });
-  };
+  const getQuoteForm = document.getElementById("get-quote-form");
+
+  // Newsletter form submission
+  function showMessage(message, type = "info") {
+    const messageDiv = getQuoteForm.querySelector(".response-message");
+    messageDiv.textContent = message;
+    messageDiv.classList.remove("info", "success", "error");
+    messageDiv.classList.add(type);
+  }
+
+  getQuoteForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const message = this.message.value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[0-9\-\+\s\(\)]+$/;
+
+    if (name.length < 2) {
+      showMessage("Please enter a valid name (min 2 characters).", "error");
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      showMessage("Please enter a valid email.", "error");
+      return;
+    }
+
+    if (!phonePattern.test(phone)) {
+      showMessage("Please enter a valid phone number.", "error");
+      return;
+    }
+
+    if (message.length < 10) {
+      showMessage("Message must be at least 10 characters.", "error");
+      return;
+    }
+
+    const formData = new FormData(this);
+
+    try {
+      const response = await fetch("send_mail.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+      showMessage(
+        result.message,
+        result.status === "success" ? "success" : "error"
+      );
+
+      if (result.status === "success") {
+        this.reset(); // Clear form on success
+      }
+    } catch (error) {
+      showMessage("An unexpected error occurred. Please try again.", "error");
+    }
+  });
+};
