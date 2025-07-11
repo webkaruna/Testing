@@ -322,29 +322,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // filter animation
 
-  const filterButtons = document.querySelectorAll('.filter-btn');
+   const filterButtons = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.item');
 
-  function updateItems(filter) {
-    items.forEach(item => {
-      const match = filter === 'all' || item.classList.contains(filter);
-      if (match) {
-        item.classList.remove('hidden');
-        setTimeout(() => item.classList.add('show'), 300); // allow reflow
-      } else {
-        item.classList.remove('show');
-        setTimeout(() => item.classList.add('hidden'), 300); // delay to allow zoom-out
-      }
-    });
-  }
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
       document.querySelector('.filter-btn.active')?.classList.remove('active');
-      btn.classList.add('active');
-      updateItems(btn.getAttribute('data-filter'));
+      button.classList.add('active');
+
+      const filter = button.getAttribute('data-filter');
+
+      // Hide all items instantly
+      items.forEach(item => {
+        item.classList.remove('show');
+        item.style.display = 'none';
+      });
+
+      // Then show only matching items with zoom-in
+      setTimeout(() => {
+        items.forEach(item => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'block';
+            setTimeout(() => item.classList.add('show'), 10); // trigger animation
+          }
+        });
+      }, 100); // small delay to allow reset
     });
   });
 
-  // Initial show all
-  window.onload = () => updateItems('all');
+  // Show all items on page load
+  window.onload = () => {
+    items.forEach(item => {
+      item.style.display = 'block';
+      setTimeout(() => item.classList.add('show'), 10);
+    });
+  };
