@@ -152,6 +152,12 @@ h4,
 }
 
 /* Header */
+header .navbar-brand img:hover {
+    width: 101%;
+    height: auto;
+}
+
+
 header {
   padding-top: 12px;
 }
@@ -177,6 +183,10 @@ header .navbar-toggler {
 header .navbar-toggler .navbar-toggler-icon {
   width: 2.5rem;
   height: 2.5rem;
+}
+header .navbar-toggler .navbar-toggler-icon:hover {
+background-size: 110%;
+background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2030%2030'%3E%3Cpath%20stroke%3D'%23139c55'%20stroke-linecap%3D'round'%20stroke-miterlimit%3D'10'%20stroke-width%3D'2'%20d%3D'M4%207h22M4%2015h22M4%2023h22'%2F%3E%3C%2Fsvg%3E");
 }
 
 header .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
@@ -214,6 +224,7 @@ header .navbar-collapse ul li a {
   padding: 20px 60px;
   text-decoration: none;
   text-transform: uppercase;
+    border: 1px solid #ffffff;
 }
 header .navbar-collapse ul li a:hover {
   background-color: #ffffff;

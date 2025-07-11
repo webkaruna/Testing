@@ -321,23 +321,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // filter animation
-const filterButtons = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.item');
 
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelector('.filter-btn.active').classList.remove('active');
-        btn.classList.add('active');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.item');
 
-        const filter = btn.getAttribute('data-filter');
-
-        items.forEach(item => {
-          if (filter === 'all') {
-            item.classList.remove('hidden');
-          } else {
-            item.classList.toggle('hidden', !item.classList.contains(filter));
-          }
-        });
-      });
+  function updateItems(filter) {
+    items.forEach(item => {
+      const match = filter === 'all' || item.classList.contains(filter);
+      if (match) {
+        item.classList.remove('hidden');
+        setTimeout(() => item.classList.add('show'), 300); // allow reflow
+      } else {
+        item.classList.remove('show');
+        setTimeout(() => item.classList.add('hidden'), 300); // delay to allow zoom-out
+      }
     });
+  }
 
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.filter-btn.active')?.classList.remove('active');
+      btn.classList.add('active');
+      updateItems(btn.getAttribute('data-filter'));
+    });
+  });
+
+  // Initial show all
+  window.onload = () => updateItems('all');

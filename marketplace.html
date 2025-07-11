@@ -23,14 +23,15 @@
       margin: 5px;
       padding: 10px 20px;
       border: none;
-      background: #444;
-      color: #fff;
+      background:none;
+      color: #000000;
       cursor: pointer;
       border-radius: 5px;
     }
 
     .filters button.active {
-      background: #007bff;
+      background: #139c55 !important;
+        color: #ffffff;
     }
 
     .gallery {
@@ -40,9 +41,22 @@
     }
 
     .item {
-      position: relative;
-      overflow: hidden;
-    }
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.2);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.item.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.item.hidden {
+  pointer-events: none;
+  transform: scale(0.2);
+}
 
     .item img {
       width: 100%;
@@ -106,8 +120,8 @@ font-weight: bold;
 <!-- Banner -->
 <section class="bg-primary text-white py-5 d-flex align-items-center justify-content-center">
   <div class="container py-5 container-90">
-    <h1 class="breadcrumb-custom ap-medium">HOME / Privacy Policy</h1>
-    <h1 class="display-4 ap-black green-headline green-headline-cp mt-lg-55">Privacy Policy</h1>
+    <h1 class="breadcrumb-custom ap-medium">HOME / Marketplace</h1>
+    <h1 class="display-4 ap-black green-headline green-headline-cp mt-lg-55">Marketplace</h1>
   </div>
 </section>
 <section class="py-5">
