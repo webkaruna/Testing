@@ -13,6 +13,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 <link rel="stylesheet" href="./assets/styles/main.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -43,20 +44,20 @@
     <h1 class="breadcrumb-custom ap-medium">HOME  /  CONTACT US</h1>
     <div class="row mt-lg-55">
       <div class="col-12 col-lg-8">
-        <h1 class="display-4 ap-black green-headline green-headline-cp">OUR ADDRESS</h1>
-        <p class="lead ap-medium text-cp mt-lg-25">333, 14 Main Road, 6 A Cross, RMV Extension,<br>
+        <h1 class="display-4 ap-black green-headline green-headline-cp" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="0">OUR ADDRESS</h1>
+        <p class="lead ap-medium text-cp mt-lg-25" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="500">333, 14 Main Road, 6 A Cross, RMV Extension,<br>
           Sadashivnagar,
           Bangalore - 560080, India</p>
-        <div class="overflow-hidden curve-map mt-lg-40" style="width:90%; max-width:700px; height: 352px;">
+        <div class="overflow-hidden curve-map mt-lg-40" style="width:90%; max-width:700px; height: 352px;" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="500">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.1194276645556!2d72.87581257595943!3d19.10241598210754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9cd75769a53%3A0x593c8b45bd42e9da!2sBay99%20-%20A%20WPP%20Campus!5e0!3m2!1sen!2sin!4v1751605930054!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
       <div class="col-12 col-lg-4">
-        <h1 class="display-4 ap-black green-headline green-headline-cp mt-lg-50">EMAIL US</h1>
-        <p class="lead ap-medium text-cp mt-lg-25">contact@zippmat.com</p>
+        <h1 class="display-4 ap-black green-headline green-headline-cp mt-lg-50" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="1500">EMAIL US</h1>
+        <p class="lead ap-medium text-cp mt-lg-25" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="2000">contact@zippmat.com</p>
         <div class="mt-lg-200 mt-0">
-          <h1 class="display-4 ap-black green-headline green-headline-cp">CALL US</h1>
-          <p class="lead ap-medium text-cp mt-lg-25">+91 63615 29249</p>
+          <h1 class="display-4 ap-black green-headline green-headline-cp" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="2500">CALL US</h1>
+          <p class="lead ap-medium text-cp mt-lg-25" data-aos="fade-left" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="3000">+91 63615 29249</p>
         </div>
       </div>
     </div>
@@ -67,12 +68,12 @@
 <footer> 
   <!-- Contact Form -->
   <section class="section-with-spacing">
-    <div class="container py-5">
+    <div class="container py-3">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="border-0">
-            <div class="card-body p-4">
-              <form>
+            <div class="card-body">
+              <form  data-aos="fade-top" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="200">
                 <div class="mb-3">
                   <input type="text" class="form-control" id="name" placeholder="Name" required>
                 </div>
@@ -98,7 +99,7 @@
     </div>
   </section>
   <section class="footer-inner">
-    <div class="container">
+    <div class="container py-3">
       <div class="row align-items-center">
         <div class="col-md-4">
           <h4>ISO 9001:2015 Certified Company</h4>
@@ -117,10 +118,12 @@
     </div>
   </section>
 </footer>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+<script>
+      AOS.init();
+    </script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
-
 <script src="./assets/scripts/main.js"></script>
 </body>
 </html>
