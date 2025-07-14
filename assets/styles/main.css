@@ -948,6 +948,11 @@ body:has(header.fixed-top) main {
         line-height: 122px;
         letter-spacing: -10px;
       }
+      .text-about-us4 {
+        font-size: 155px !important;
+        line-height: 122px !important;
+        letter-spacing: -5px;
+      }
       .blue-headline {
         color: #174689 !important;
       }
@@ -966,6 +971,11 @@ body:has(header.fixed-top) main {
           font-size: 85px;
           line-height: 72px;
           letter-spacing: -5px;
+        }
+        .text-about-us4 {
+          font-size: 85px !important;
+          line-height: 72px!important;
+          letter-spacing: -5px!important;
         }
       }
     
@@ -1414,3 +1424,5 @@ body:has(header.fixed-top) main {
     height: 196px !important;
   }
 } /* contact page css */
+
+
