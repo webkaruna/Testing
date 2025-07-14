@@ -4,193 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ZippMat</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
-      .about-us-banner {
-        background-image: url("./assets/images/au-banner.jpg");
-        background-size: cover;
-      }
-      .text-about-us {
-        font-size: 42px;
-        line-height: 33px;
-        letter-spacing: -1px;
-      }
-      .text-about-us2 {
-        font-size: 25px;
-        line-height: 40px;
-      }
-      .text-about-us3 {
-        font-size: 155px;
-        line-height: 122px;
-        letter-spacing: -10px;
-      }
-      .blue-headline {
-        color: #174689 !important;
-      }
-
-      @media (max-width: 767.98px) {
-        .text-about-us {
-          font-size: 32px;
-          line-height: 23px;
-          letter-spacing: -1px;
-        }
-        .text-about-us2 {
-          font-size: 20px;
-          line-height: 30px;
-        }
-        .text-about-us3 {
-          font-size: 85px;
-          line-height: 72px;
-          letter-spacing: -5px;
-        }
-      }
-    
-      .about-us-hero-banner {
-        background: url("./assets/images/hero-bg.jpg") center/cover;
-        position: relative;
-        isolation: isolate;
-        min-height: 240px;
-      }
-      .about-us-hero-banner h1 {
-        font-family: "acumin-pro", sans-serif;
-        font-weight: 800;
-        font-style: normal;
-        line-height: 1.05;
-        margin: 0;
-      }
-      .about-us-hero-banner p {
-        font-size: 25px;
-        margin: 0;
-        font-weight: 400;
-        display: inline-grid;
-      }
-      .about-us-hero-banner .overlay {
-        position: relative; /* keep text above ::after */
-        padding: 4rem 0;
-      }
-      .hero-headline h1 {
-        font-size: 70px;
-        line-height: 60px;
-      }
-      .mh112 {
-        max-height: 112px;
-      }
-      .mh112 img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-      } /* ---------- BENEFITS SECTION ---------- */
-      .benefits {
-        background: var(--color-secondary);
-        padding: 4rem 0;
-      } /* list styling */
-      .benefit-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        max-width: 550px;
-      }
-      .benefit-item {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        margin-bottom: 2.2rem;
-        transition: color var(--transition);
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: #139c55;
-      }
-      .benefit-item:last-child {
-        margin-bottom: 0;
-      }
-      .benefit-item .leaf {
-        width: var(--leaf-size);
-        height: var(--leaf-size);
-        margin-right: 1.1rem;
-        flex: 0 0 var(--leaf-size);
-        transition: background var(--transition);
-        /*clip-path:ellipse(70% 50% at 50% 50%);*/
-        border-radius: 0 15px 0 15px;
-        height: 15px;
-        width: 30px;
-      }
-      .benefit-item.active,
-      .benefit-item:hover {
-        color: #fff;
-      }
-      .benefit-item.active .leaf,
-      .benefit-item:hover .leaf {
-        background: #fff;
-      }
-      .benefit-item .leaf {
-        background: var(--color-primary);
-      } /* ---------- RIGHT SEMICIRCLE ---------- */
-      .semi-wrap {
-        position: relative;
-        min-height: 380px;
-      }
-      .semi-circle {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        translate: 0 -50%;
-        width: 100%;
-        max-width: 700px;
-        aspect-ratio: 2/1; /* keeps nice semicircle */
-        background-image: url("./assets/images/shape.png");
-        background-size: cover;
-        background-repeat: no-repeat; /*border-radius:0 100% 100% 0/0 50% 50% 0;*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 3rem 3rem;
-        text-align: center;
-      }
-      .semi-circle p {
-        width: 50%;
-        margin: 0;
-        font-size: 17px;
-        line-height: 1.55;
-        opacity: 0;
-        transition: opacity var(--transition);
-        position: absolute;
-      }
-      .semi-circle p.show {
-        opacity: 1;
-      } /* ---------- RESPONSIVE ---------- */
-
-      @media (max-width: 991.98px) {
-        .hero-headline h1 {
-          font-size: 45px;
-          line-height: 40px;
-        }
-        .semi-wrap {
-          margin-top: 1rem;
-          min-height: 200px;
-        }
-        .semi-circle {
-          width: 100%;
-          max-width: none;
-        }
-        .semi-circle p {
-          width: 75%;
-          font-size: 0.85rem;
-          line-height: 1.2;
-          line-height: 1.2;
-        }
-        .benefit-item {
-          margin-bottom: 0.5rem;
-        }
-      }
+     
     </style>
   </head>
   <body class="has-dark-banner">
@@ -572,13 +391,11 @@
           });
         });
       });
-    </script>
-    <script>
+
       window.addEventListener("load", function () {
         document.getElementById("hero-headline").classList.add("animate");
       });
-    </script>
-    <script>
+
       document.addEventListener("DOMContentLoaded", () => {
         // 1. Grab every element you marked for lazy reveal
         const lazySections = document.querySelectorAll(".lazy-section");
