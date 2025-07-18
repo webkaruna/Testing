@@ -6,6 +6,7 @@
   --tint-tarshakti: #174689;
   --tint-ekobar: #139c55;
   --tint-market: #174689;
+  --tint-white: #ffffff;
   --product-hover-transition-duration: 0.5s;
 }
 .first-container {
@@ -201,7 +202,7 @@ header .navbar-collapse ul li a {
 }
 header .navbar-collapse ul li a:hover {
   background-color: #ffffff;
-  color: var(--color-primary);
+  color: var(--color-primary); 
 }
 header .navbar-collapse ul li:nth-child(odd) a {
   border-radius: 60px 0 60px 0;
@@ -1520,3 +1521,249 @@ body:has(header.fixed-top) main {
   }
 }
 /* career page css */
+
+
+/* marketplace page css */
+
+.bg-flyash {
+    background-image: url("../images/products/cementitious/FlyAsh.jpg");
+}
+.bg-rmc {
+    background-image: url("../images/products/cementitious/RMC.jpg");
+}
+.bg-aac {
+    background-image: url("../images/products/cementitious/AAC-Blocks.jpg");
+}
+.bg-opc {
+    background-image: url("../images/products/cementitious/OPC-PPC.jpg");
+}
+
+.bg-oil {
+    background-image: url("../images/products/petroleum/Light-Diesel-Oils.jpg");
+}
+.bg-paint {
+    background-image: url("../images/products/petroleum/Thermoplastic-Paints.jpg");
+}
+
+.bg-ohe {
+    background-image: url("../images/products/railway/OHE-Fabrocated-Masts.jpg");
+}
+.bg-cables {
+    background-image: url("../images/products/railway/Catenary-Cables.jpg");
+}
+.bg-signal {
+    background-image: url("../images/products/railway/Signalling-Products.jpg");
+}
+
+
+.steel-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+    width: 100%
+}
+
+/* Left Image Panel */
+.steel-left-panel {
+  position: relative;
+  flex: 2;
+}
+
+.steel-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.steel-item .overlay {
+position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s ease;
+  mix-blend-mode: multiply;
+  background-color: var(--color-primary)
+}
+.steel-item .overlay2 {
+position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s ease;
+  mix-blend-mode: multiply;
+  background-color: var(--color-secondary)
+}
+
+.steel-item:hover h3 {
+    color: var(--color-primary) !important;
+    mix-blend-mode: darken;
+}
+.steel-item:hover .overlay {
+    background-color:#ffffff;
+    mix-blend-mode: hard-light;
+    opacity: 80%;
+}
+.steel-item:hover .overlay2 {
+    background-color:#ffffff;
+    mix-blend-mode: hard-light;
+    opacity: 80%;
+}
+
+.steel-item h3 { font-size: 30px; mix-blend-mode: hard-light; text-align: center; justify-content: center;  align-items: center; display: flex; position: absolute; top: 0; bottom: 0; right: 0; left: 0;}
+.steel-main-image,
+.steel-left-panel .overlay {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.steel-main-image.active,
+.steel-left-panel .overlay.active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Right Panel */
+.steel-right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+    text-align: center;
+}
+
+/* Common styling */
+.steel-item {
+  flex: 1;
+  position: relative;
+  padding-left: 20px;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-size: cover;
+  background-position: center;
+    text-align: center;
+}
+
+.steel-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+}
+
+/* Hover tint overlay */
+.steel-item:hover {
+  color: #000;
+}
+
+/* Background images for each item */
+.steel-item:nth-child(1) {
+  background-image: url('../images/products/steel/Crash-Barriers.jpg') !important;
+}
+.steel-item:nth-child(2) {
+  background-image: url('../images/products/steel/Steel-Rods.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(3) {
+  background-image: url('../images/products/steel/Scaffolding-and-Framework.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(4) {
+  background-image: url('../images/products/steel/MS-Pipes.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(5) {
+  background-image: url('../images/products/steel/Structural.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(6) {
+  background-image: url('../images/products/steel/GI-Sheets.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(7) {
+  background-image: url('../images/products/steel/TMT.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(8) {
+  background-image: url('../images/products/steel/Steel-Coils.jpg');
+  mix-blend-mode: multiply;
+}
+.steel-item:nth-child(9) {
+  background-image: url('../images/products/steel/Binding-Wires.jpg');
+  mix-blend-mode: multiply;
+}
+.category-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0px 110px 0px 110px;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+.category-card2 {
+      position: relative;
+      overflow: hidden;
+      border-radius: 110px 0px 110px 0px;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    .category-card2 img, .category-card img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .category-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-primary);
+        mix-blend-mode: multiply;
+      z-index: 2;
+    }
+    .category-card2::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  background-color: var(--color-secondary);
+        mix-blend-mode: multiply;
+      z-index: 2;
+    }
+.leafs a {text-decoration: none !important;}
+    .category-card2 span, .category-card span {
+      position: relative;
+      z-index: 3;
+    
+    }
+.category-card2:hover span, .category-card:hover span {padding-right: 50px; background:url("../images/products/icon.png") no-repeat right center;}
+.category-card:hover::after, .category-card2:hover::after {background-color: #dddddd;}
+/* marketplace page css */

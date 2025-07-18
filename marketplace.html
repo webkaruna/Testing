@@ -8,80 +8,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="./assets/styles/main.css" />
 <style>
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f4f4f4;
-}
-.filters {
+.products-section h2 {
+    font-size: 30px !important;
+    text-transform: none !important;
     text-align: center;
-    margin-bottom: 20px;
 }
-.filters button {
-    margin: 5px;
-    padding: 10px 20px;
-    border: none;
-    background: none;
-    color: #000000;
-    cursor: pointer;
-    border-radius: 5px;
+.products-section:hover h2 {
+    font-size: 50px !important;
 }
-.filters button.active {
-    background: #139c55 !important;
-    color: #ffffff;
-}
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 15px;
-}
-.item {
-    position: relative;
-    overflow: hidden;
-    transform: scale(0.2);
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-.item.show {
-    transform: scale(1);
-    opacity: 1;
-}
-.item.hidden {
-    pointer-events: none;
-    transform: scale(0.2);
-}
-.item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(27, 69, 136, 1);
-    mix-blend-mode: hard-light;
-    font-weight: bold;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: 0.3s ease;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
-}
-.overlay span {
-    color: #ffffff;
-}
-.item:hover .overlay {
-    opacity: 1;
-}
-.hidden {
-    display: none !important;
+.bg-primary {
+    background-image: url("../Testing/assets/images/products/marketplace-banner.jpg");
 }
 </style>
 </head>
@@ -110,72 +46,105 @@ body {
 <section class="bg-primary text-white py-5 d-flex align-items-center justify-content-center">
   <div class="container py-5">
     <h1 class="breadcrumb-custom ap-medium">HOME / Marketplace</h1>
-    <h1 class="display-4 ap-black green-headline green-headline-cp mt-lg-55">Marketplace</h1>
+    <h1 class="display-4 ap-black text-white green-headline-cp mt-lg-55">Marketplace</h1>
+    <div class="row g-4 mt-5 leafs">
+      <div class="col-md-3 col-sm-6">
+        <a href="#cement"><div class="category-card"> <img src="./assets/images/products/cement-leaf.png" alt="Cementitious"> <span>Cementitious</span> </div></a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <a href="#petrol"><div class="category-card2"> <img src="./assets/images/products/petroleum-leaf.png" alt="Petroleum"> <span>Petroleum</span> </div></a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <a href="#rail"><div class="category-card"> <img src="./assets/images/products/railway-leaf.png" alt="Railway"> <span>Railway</span> </div></a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <a href="#steel"><div class="category-card2"> <img src="./assets/images/products/steel-leaf.png" alt="Steel"> <span>Steel</span> </div></a>
+      </div>
+    </div>
   </div>
 </section>
-<section class="py-5">
-  <div class="container">
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="cementitious">Cementitious</button>
-      <button class="filter-btn" data-filter="petroleum">Petroleum</button>
-      <button class="filter-btn" data-filter="railway">Railway</button>
-      <button class="filter-btn" data-filter="steel">Steel</button>
+<section class="products-section" id="cement">
+  <div class="product-column bg-flyash"> <span class="overlay" style="background-color: var(--tint-ekoblend)" ></span>
+    <div class="heading-wrapper">
+      <h2> FlyAsh </h2>
     </div>
-    <div class="gallery">
-      <div class="item cementitious"> <img src="./assets/images/products/cementitious/FlyAsh.png" alt="FlyAsh">
-        <div class="overlay">FlyAsh</div>
+  </div>
+  <div class="product-column bg-rmc"> <span class="overlay" style="background-color: var(--tint-tarshakti)" ></span>
+    <div class="heading-wrapper">
+      <h2>RMC</h2>
+    </div>
+  </div>
+  <div class="product-column bg-aac"> <span class="overlay" style="background-color: var(--tint-ekobar)" ></span>
+    <div class="heading-wrapper">
+      <h2>AAC  Blocks</h2>
+    </div>
+  </div>
+  <div class="product-column bg-opc"> <span class="overlay" style="background-color: var(--tint-market)" ></span>
+    <div class="heading-wrapper">
+      <h2>OPC, PPC</h2>
+    </div>
+  </div>
+</section>
+<section class="products-section" id="petrol">
+  <div class="product-column bg-paint"> <span class="overlay" style="background-color: var(--tint-tarshakti)" ></span>
+    <div class="heading-wrapper">
+      <h2> Thermoplastic Paints </h2>
+    </div>
+  </div>
+  <div class="product-column bg-oil"> <span class="overlay" style="background-color: var(--tint-ekoblend)" ></span>
+    <div class="heading-wrapper">
+      <h2>Light
+        Diesel Oils</h2>
+    </div>
+  </div>
+</section>
+<section class="products-section" id="rail">
+  <div class="product-column bg-ohe"> <span class="overlay" style="background-color: var(--tint-ekoblend)" ></span>
+    <div class="heading-wrapper">
+      <h2> OHE Fabrocated Masts </h2>
+    </div>
+  </div>
+  <div class="product-column bg-cables"> <span class="overlay" style="background-color: var(--tint-tarshakti)" ></span>
+    <div class="heading-wrapper">
+      <h2>Catenary Cables</h2>
+    </div>
+  </div>
+  <div class="product-column bg-signal"> <span class="overlay" style="background-color: var(--tint-ekobar)" ></span>
+    <div class="heading-wrapper">
+      <h2>Signalling products</h2>
+    </div>
+  </div>
+</section>
+<section class="products-section" id="steel">
+  <div class="steel-container">
+    <div class="steel-left-panel"> <img src="./assets/images/products/steel/Binding-Wires.jpg" alt="Crash Barrier" class="steel-main-image active" id="mainImage" /> <span class="overlay active" id="overlay"></span> </div>
+    <div class="steel-right-panel">
+      <div class="steel-item align-items-center" data-image="./assets/images/products/steel/Crash-Barriers.jpg" data-color="var(--tint-white)"><span class="overlay" ></span>
+        <h3>Crash Barriers</h3>
       </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/Crash-Barriers.png" alt="Crash Barriers">
-        <div class="overlay">Crash Barriers</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/Steel-Rods.jpg" ><span class="overlay2" ></span>
+        <h3>Steel Rods</h3>
       </div>
-      <div class="item petroleum"> <img src="./assets/images/products/petroleum/Thermoplastic-Paints.png" alt="Thermoplastic Paints">
-        <div class="overlay">Thermoplastic Paints</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/Scaffolding-and-Framework.jpg" ><span class="overlay" ></span>
+        <h3>Scaffolding and Framework</h3>
       </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/Steel-Rods.png" alt="Steel Rods">
-        <div class="overlay">Steel Rods</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/MS-Pipes.jpg" ><span class="overlay2" ></span>
+        <h3>MS Pipes</h3>
       </div>
-      <div class="item railway"> <img src="./assets/images/products/railway/OHE-Fabrocated-Masts.png" alt="OHE Fabrocated Masts">
-        <div class="overlay">OHE Fabrocated Masts</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/Structural.jpg" ><span class="overlay" ></span>
+        <h3>Structural</h3>
       </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/Scaffolding-and-Framework.png" alt="Scaffolding and Framework">
-        <div class="overlay">Scaffolding and Framework</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/GI-Sheets.jpg" ><span class="overlay2" ></span>
+        <h3>GI Sheets</h3>
       </div>
-      <div class="item cementitious"> <img src="./assets/images/products/cementitious/RMC.png" alt="RMC">
-        <div class="overlay">RMC</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/TMT.jpg" ><span class="overlay" ></span>
+        <h3>TMT</h3>
       </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/MS-Pipes.png" alt="MS Pipes">
-        <div class="overlay">MS Pipes</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/Steel-Coils.jpg" ><span class="overlay2" ></span>
+        <h3>Steel Coils</h3>
       </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/Structural.png" alt="Light Diesel Oils">
-        <div class="overlay">Structural</div>
-      </div>
-      <div class="item petroleum"> <img src="./assets/images/products/petroleum/Light-Diesel-Oils.png" alt="Light Diesel Oils">
-        <div class="overlay">Light Diesel Oils</div>
-      </div>
-      <div class="item railway"> <img src="./assets/images/products/railway/Catenary-Cables.png" alt="Catenary Cables">
-        <div class="overlay">Catenary Cables</div>
-      </div>
-      <div class="item cementitious"> <img src="./assets/images/products/cementitious/AAC-Blocks.png" alt="AAC Blocks">
-        <div class="overlay">AAC Blocks</div>
-      </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/GI-Sheets.png" alt="GI Sheets">
-        <div class="overlay">GI Sheets</div>
-      </div>
-      <div class="item cementitious"> <img src="./assets/images/products/cementitious/OPC-PPC.png" alt="OPC, PPC">
-        <div class="overlay">OPC, PPC</div>
-      </div>
-      <div class="item railway"> <img src="./assets/images/products/railway/Signalling-Products.png" alt="Signalling Products">
-        <div class="overlay">Signalling Products</div>
-      </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/TMT.png" alt="Light Diesel Oils">
-        <div class="overlay">TMT</div>
-      </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/Steel-Coils.png" alt="Steel Coils">
-        <div class="overlay">Steel Coils</div>
-      </div>
-      <div class="item steel"> <img src="./assets/images/products/steel/Binding-Wires.png" alt="Binding Wires">
-        <div class="overlay">Binding Wires</div>
+      <div class="steel-item" data-image="./assets/images/products/steel/Binding-Wires.jpg" ><span class="overlay" ></span>
+        <h3>Binding Wires</h3>
       </div>
     </div>
   </div>
@@ -202,6 +171,23 @@ body {
     </div>
   </section>
 </footer>
+<script>
+  const items = document.querySelectorAll('.steel-item');
+  const mainImage = document.getElementById('mainImage');
+  const overlay = document.getElementById('overlay');
+
+  items.forEach(item => {
+    // Set background image from data-image
+    const bgImage = item.getAttribute('data-image');
+    item.style.backgroundImage = `url(${bgImage})`;
+
+    // On hover: change left image and overlay tint
+    item.addEventListener('mouseenter', () => {
+      mainImage.src = bgImage;
+      overlay.style.backgroundColor = item.getAttribute('data-color');
+    });
+  });
+</script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <script src="./assets/scripts/main.js"></script>
 </body>
 </html>
