@@ -1426,3 +1426,97 @@ body:has(header.fixed-top) main {
 } /* contact page css */
 
 
+/* career page css */
+
+
+.bg-careers {
+  background: url("../images/career-bg1.png") bottom center / cover;}
+.bg-careers2 {
+  background: url("../images/career-bg2.png") top center / cover;}
+.bg-careers2text {font-size: 30px; line-height: 33px;}
+.bg-careers2text1 {font-size: 3.6rem; line-height: 3rem;}
+.bg-careers2text2 {font-size: 18px; line-height: 29px;}
+.openings-section {
+  padding: 60px 20px;
+  color: #1b4588;
+}
+.openings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto 60px;
+    text-align: center;
+}
+
+.position {
+  position: relative;
+  width: 25%;
+  min-width: 240px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.position:not(:nth-child(4n))::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 0;
+  height: 50%;
+  width: 2px;
+  background-color: #1b4588;
+}
+.position h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #1b4588;
+  font-weight: 400;
+}
+
+.position p {
+  font-size: 16px;
+  color: #009739;
+  margin: 0;
+}
+.position a {
+  color: #1b4588;
+}
+.position a:hover {
+  color: #009739;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #002060;
+}
+
+.footer-text a {
+  color: #009739;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* Remove line after every 4th item (end of row) */
+.position:nth-child(4n)::after {
+  content: none;
+}
+
+/* Remove line after last item (incomplete row or total last) */
+.position:last-child::after {
+  content: none;
+}
+@media (max-width: 768px) {
+  .position {
+    width: 50%;
+  }
+  .position:nth-child(1n)::after {
+    content: none;
+  }
+}
+@media (max-width: 480px) {
+  .position {
+    width: 100%;
+  }
+  .position::after {
+    content: none;
+  }
+}
+/* career page css */
