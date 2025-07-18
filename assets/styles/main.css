@@ -1766,4 +1766,12 @@ position: absolute;
     }
 .category-card2:hover span, .category-card:hover span {padding-right: 50px; background:url("../images/products/icon.png") no-repeat right center;}
 .category-card:hover::after, .category-card2:hover::after {background-color: #dddddd;}
+
+/* ---------- RESPONSIVE ---------- */
+
+      @media (max-width: 991.98px) {
+.steel-item h3 {
+    font-size: 15px !important;}
+}
+
 /* marketplace page css */
