@@ -820,11 +820,14 @@ body:has(header.fixed-top) main {
   color: white;
   font-size: 8rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: .8;
   text-align: left;
 }
 .review-tile .review-content {
   display: none;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
 }
 .review-tile.active .review-content {
   display: block;
