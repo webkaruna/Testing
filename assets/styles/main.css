@@ -69,6 +69,9 @@
 .gbbs-ekoblend-banner {
   background: url(../images/gbbs-ekoblend-banner.png) center center / cover;
 }
+.tarshakti-banner {
+  background: url("../images/tarshakti-banner.png") center center / cover;
+}
 .gbbs-ekoblend-manufacturing-banner {
   background: url(../images/gbbs-ekoblend-manufacturing-banner.png) center
     center / cover;
@@ -1864,6 +1867,9 @@ position: absolute;
     border-bottom-left-radius: 168px;
     padding: 0px 100px 0px 100px;
 }
+.gbbsleaf1:hover, .gbbsleaf2:hover {
+    background-color: #1b4588 !important ;
+}
 button.accordion-button.collapsed {
     background: #1b4588;
     color: #ffffff;
@@ -1945,4 +1951,8 @@ button.accordion-button.collapsed {
 .gbbsleaf2{
     padding: 0px 50px 0px 50px;
 }
-}
+    .map-img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
