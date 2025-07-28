@@ -316,6 +316,18 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(counter);
     });
   }
+
+  // GFRP application tiles
+  {
+    document.querySelectorAll(".gfrp-application-tile").forEach((tile) => {
+      const cols = tile.getAttribute("data-cols") || 1;
+      const rows = tile.getAttribute("data-rows") || 1;
+      const bg = tile.getAttribute("data-bg") || "";
+      tile.style.gridColumn = `span ${cols}`;
+      tile.style.gridRow = `span ${rows}`;
+      tile.style.backgroundImage = `url(${bg})`;
+    });
+  }
 });
 
 // filter animation
