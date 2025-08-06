@@ -1384,8 +1384,7 @@ align-items: flex-start;
   }
   .gbbs-ekoblend-manufacturing-banner .arc-horizontal::after,
   .gbbs-ekoblend-banner.arc-right-top::after,
-  .arc-horizontal::after,
-  .ekobar-gfrp-top-section.arc-left-top::after {
+  .arc-horizontal::after {
     border-radius: 0;
     width: 100%;
   }
@@ -1399,11 +1398,6 @@ align-items: flex-start;
   .our-team-section .team-member-image {
     width: 120px;
     height: 120px;
-  }
-
-  .table-styled>:not(caption)>*>* {
-    padding: .5rem 1rem;
-    font-size: 0.9rem;
   }
 }
 @media (max-width: 678px) {
