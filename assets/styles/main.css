@@ -657,6 +657,7 @@ body:has(header.fixed-top) main {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+cursor: pointer;
 }
 .cities-section .carousel-thumbnails .item::before {
   content: "";
