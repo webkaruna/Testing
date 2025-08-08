@@ -1879,12 +1879,12 @@ cursor: pointer;
 .gbbsleaf1 {
   border-top-left-radius: 168px;
   border-bottom-right-radius: 168px;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 60px 0px 60px;
 }
 .gbbsleaf2 {
   border-top-right-radius: 168px;
   border-bottom-left-radius: 168px;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 60px 0px 60px;
 }
 .gbbsleaf1:hover, .gbbsleaf2:hover {
   background-color: #1b4588 !important;
