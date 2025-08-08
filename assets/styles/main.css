@@ -122,6 +122,72 @@
   border-radius: 400px 0 0 0;
 }
 
+/* Creative arc with hover */
+.hover-arc-items {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.hover-arc-items .arc-item {
+  position: relative;
+  overflow: hidden;
+    min-height: 100px;
+    min-width: 500px;
+}
+.hover-arc-items .arc-item > * {
+  position: relative;
+  z-index: 2;
+}
+.hover-arc-items .arc-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  background: var(--tint-ekoblend);
+  border: 3px solid #fff;
+  border-radius: 0 400px 0 400px;
+}
+.hover-arc-items .arc-item:nth-child(odd):after {
+  border-radius: 400px 0 400px 0;
+}
+.hover-arc-items .arc-item .heading {
+  color: var(--tint-tarshakti);
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+.hover-arc-items .arc-item .description {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 80%;
+}
+.hover-arc-items .arc-item:hover::after {
+  background: var(--tint-tarshakti);
+}
+.hover-arc-items .arc-item:hover .description {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.hover-arc-items .arc-item:hover .heading {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 /* Global styles */
 body {
   margin: 0;
@@ -147,6 +213,10 @@ body {
 .text-xl {
   font-size: 1.6rem;
   line-height: 1.6;
+}
+.text-xl-thin {
+  font-size: 1.4rem;
+  line-height: 1.4;
 }
 h1,
 .h1 {
