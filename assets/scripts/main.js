@@ -130,6 +130,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 300);
     }
   }
+const swiper = new Swiper(".swiper-container", {
+  loop: true,
+  speed: 400,
+  effect: "fade",
+  autoplay: {
+    delay: 4000, // 4 seconds
+    disableOnInteraction: false, // Keep autoplay even after user swipes
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  on: {
+    init: function () {
+      animateSlide(this.slides[this.activeIndex]);
+    },
+    slideChangeTransitionEnd: function () {
+      this.slides.forEach(resetSlide);
+      animateSlide(this.slides[this.activeIndex]);
+    },
+  },
+});
 
   // Cities section swiper
   {
