@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Change breakpoint as per your mobile definition (e.g., 768px)
+  if (window.innerWidth <= 768) {
+    const images = document.querySelectorAll(".swiper-slide img");
+
+    images.forEach((img) => {
+      if (img.src.includes("home-banner-1.png")) {
+        img.src = img.src.replace("home-banner-1.png", "home-banner-1m.jpg");
+      } else if (img.src.includes("home-banner-2.png")) {
+        img.src = img.src.replace("home-banner-2.png", "home-banner-2m.jpg");
+      } else if (img.src.includes("home-banner-3.png")) {
+        img.src = img.src.replace("home-banner-3.png", "home-banner-3m.jpg");
+      }
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   // Calculate header height on load and resize, then store it in a CSS variable
   function setHeaderHeight() {
     const header = document.querySelector("header");
