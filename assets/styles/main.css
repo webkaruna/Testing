@@ -1971,6 +1971,8 @@ button.accordion-button.collapsed {
   top: 0;
 }
 @media screen and (max-width: 768px) {
+    .mtextsmall {font-size: medium;}
+    .eko-blend-ggbs-container { background: url(../images/eko-blend-ggbs-banner-m.jpg) center center / cover;}
     .ekobaradvantage { padding-top: 200px;}
 .eckobar { right: 0px; top: 0px; max-width: 400px;}
   .gfrp-applications-grid {
