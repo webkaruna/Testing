@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const links = {
+    "bg-ggbs": "link-for-ggbs.html",
+    "bg-tarshakti": "link-for-tarshakti.html",
+    "bg-gfrp": "link-for-gfrp.html",
+    "bg-market": "link-for-market.html"
+  };
+
+  Object.entries(links).forEach(([className, url]) => {
+    const el = document.querySelector(`.${className}`);
+    if (el) {
+      el.style.cursor = "pointer";
+      el.addEventListener("click", function () {
+        window.location.href = url;
+      });
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
   // Change breakpoint as per your mobile definition (e.g., 768px)
   if (window.innerWidth <= 768) {
     const images = document.querySelectorAll(".swiper-slide img");
