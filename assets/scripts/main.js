@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   // Change breakpoint as per your mobile definition (e.g., 768px)
   if (window.innerWidth <= 768) {
@@ -28,6 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
         img.src = img.src.replace("home-banner-2.png", "home-banner-2m.jpg");
       } else if (img.src.includes("home-banner-3.png")) {
         img.src = img.src.replace("home-banner-3.png", "home-banner-3m.jpg");
+      }
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 768) { // Mobile breakpoint
+    const images = document.querySelectorAll(".cities-carousel .carousel-items img");
+
+    images.forEach((img) => {
+      if (img.src.includes("cities-bg-mumbai.jpg")) {
+        img.src = img.src.replace("cities-bg-mumbai.jpg", "cities-bg-mumbai-m.jpg");
+      } else if (img.src.includes("cities-bg-chennai.jpg")) {
+        img.src = img.src.replace("cities-bg-chennai.jpg", "cities-bg-chennai-m.jpg");
+      } else if (img.src.includes("cities-bg-bangalore.jpg")) {
+        img.src = img.src.replace("cities-bg-bangalore.jpg", "cities-bg-bangalore-m.jpg");
+      } else if (img.src.includes("cities-bg-delhi.jpg")) {
+        img.src = img.src.replace("cities-bg-delhi.jpg", "cities-bg-delhi-m.jpg");
+      } else if (img.src.includes("cities-bg-hubli.jpg")) {
+        img.src = img.src.replace("cities-bg-hubli.jpg", "cities-bg-hubli-m.jpg");
       }
     });
   }
