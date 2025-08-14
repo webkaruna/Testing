@@ -1063,7 +1063,10 @@ cursor: pointer;
 .blue-headline {
   color: #174689 !important;
 }
+.eckobar { right: 0px; top: 0px; max-width: 700px;}
 @media (max-width: 767.98px) {
+
+.eckobar { right: 0px; bottom: 0px; max-width: 400px;}
   .hover-arc-items .arc-item {
     min-width: 100%;
   }
@@ -1520,6 +1523,7 @@ cursor: pointer;
   }
 } /* Tablet */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    
   .mt-lg-200 {
     margin-top: 40px !important;
   }
@@ -1967,6 +1971,8 @@ button.accordion-button.collapsed {
   top: 0;
 }
 @media screen and (max-width: 768px) {
+    .ekobaradvantage { padding-top: 200px;}
+.eckobar { right: 0px; top: 0px; max-width: 400px;}
   .gfrp-applications-grid {
     display: block;
   }
