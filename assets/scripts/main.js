@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const links = {
-    "bg-ggbs": "link-for-ggbs.html",
-    "bg-tarshakti": "link-for-tarshakti.html",
-    "bg-gfrp": "link-for-gfrp.html",
-    "bg-market": "link-for-market.html"
+    "bg-ggbs": "ekoblend-ggbs.html",
+    "bg-tarshakti": "tarshakti.html",
+    "bg-gfrp": "ekobar-gfrp.html",
+    "bg-market": "marketplace.html"
   };
 
   Object.entries(links).forEach(([className, url]) => {
