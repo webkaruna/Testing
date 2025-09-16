@@ -585,8 +585,9 @@ body:has(header.fixed-top) main {
   text-align: center;
 }
 .bg-ggbs {
-  background-image: url("../images/ekoblend2.png");
-  background-position: left top !important;
+  /*background-image: url("../images/ekoblend2.png");*/
+  background-image: url("../images/eko-blend-ggbs-banner.jpg");
+  background-position: center center!important;
 }
 .bg-tarshakti {
   background-image: url("../images/tarshakti2.png");
