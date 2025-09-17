@@ -493,3 +493,18 @@ window.onload = () => {
 
 // Marketplace
 
+
+
+$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:1,
+        itemsDesktop:[600,1],
+        itemsDesktopSmall:[579,1],
+        itemsTablet:[568,1],
+        pagination:true,
+        navigation:true,
+        navigationText:["",""],
+        slideSpeed:1000,
+        autoPlay:true
+    });
+});
