@@ -354,8 +354,9 @@ header .navbar-collapse ul li:nth-child(odd) a {
 }
 /* Footer */
 footer {
-  background-image: url("../images/footer-bg.png");
+  background-image: url("../images/footer-bg.jpg");
   background-position: bottom right;
+    background-repeat: no-repeat;
 }
 footer .footer-inner {
   color: #fff;
